@@ -1,0 +1,17 @@
+<div>
+	<ul>
+        <div ng-repeat="feed in feeds | orderBy:'title'">
+	<h2><a href="{{feed.link}}" target="_blank">{{feed.title}}</a></h2>
+	<p><span ng-repeat="item in feed.entries | startFrom:currentPage*pageSize | limitTo:pageSize">
+		<a href="#ViewMovieDetail" ng-click="getDetailedView(item)">{{item.title}}</a> (<span>{{item.publishedDate | date:'d-MM-yyyy HH:mm'}}</span>)<br />
+	</span>
+ <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{ feed.entries.length/pageSize + 1 | number:0 }}
+    <button ng-disabled="currentPage == ((feed.entries.length/pageSize | number:0))" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+</div>
+    </ul>
+</div>

@@ -1,0 +1,45 @@
+<html lang="en" ng-app="myApp">
+<head>
+	<title>iTunes RSS Feed Display</title>
+	  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.min.js"></script>
+    <script src="lib/angular/angular-route.js"></script>
+    <style>
+		body {
+		  padding-top: 10px;
+		  background-color: #F5F5F5;
+		}
+    </style>
+</head>
+<body ng-controller="GetTopListController"> 
+	<!--<body> -->
+	<div>
+		<div class="row">
+		<div class="col-md-3">
+		   <ul class="nav">
+    <li><a href="#GetTopMovies" ng-click="linkClicked('Anime')">Top Anime</a></li>
+    <li><a href="#GetTopMovies" ng-click="linkClicked('Action')">Top Action</a></li>
+    <li><a href="#GetTopMovies" ng-click="linkClicked('Classics')">Top Classics</a></li>
+  </ul>
+		</div>
+		<div class="col-md-9">
+		  	<div ng-view></div>
+		</div>
+
+		</div>
+
+    </div><!-- /.container -->
+
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="lib/angular/angular-wurfl-image-tailor.js"></script> -->
+	
+	<script src="js/filters.js"></script>
+	<script src="js/factory.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
